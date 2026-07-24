@@ -46,3 +46,82 @@ void displayShowtimes(void) {
     printf("-----------------------------------------\n");
 }
 
+void viewSeatMap(void) {
+    displayShowtimes();
+
+    printf("\nEnter Movie ID (1-%d): ", NUM_MOVIES);
+    int mIndex = getValidatedInt(1, NUM_MOVIES) - 1;
+
+    printf("Enter Showtime (1-%d): ", NUM_SHOWTIMES);
+    int sIndex = getValidatedInt(1, NUM_SHOWTIMES) - 1;
+
+    Showtime *show = &movies[mIndex].showtimes[sIndex];
+
+    printf("\n=========================================\n");
+    printf("            ---- SEAT MAP ----           \n");
+    printf("=========================================\n");
+    printf(" Movie: %s | Time: %s\n", movies[mIndex].title, show->time);
+    printf(" Legend: [.] Free | [X] Booked\n");
+    printf(" Tiers: Rows A-B (Regular), Rows C-D (Premium), Row E (VIP)\n");
+    printf("-----------------------------------------\n");
+    printf("    ");
+    for (int c = 0; c < COLS; c++) printf("%2d ", c + 1);
+    printf("\n");
+
+    for (int r = 0; r < ROWS; r++) {
+        char rowLetter = 'A' + r;
+        printf(" %c  ", rowLetter);
+        for (int c = 0; c < COLS; c++) {
+            if (show->seats[r][c].isBooked) {
+                printf(" X ");
+            } else {
+                printf(" . ");
+            }
+        }
+        if (r < 2) printf(" (Regular - Rs. 500)");
+        else if (r < 4) printf(" (Premium - Rs. 750)");
+        else printf(" (VIP - Rs. 1000)");
+        printf("\n");
+    }
+    printf("=========================================\n");
+}
+void viewSeatMap(void) {
+    displayShowtimes();
+
+    printf("\nEnter Movie ID (1-%d): ", NUM_MOVIES);
+    int mIndex = getValidatedInt(1, NUM_MOVIES) - 1;
+
+    printf("Enter Showtime (1-%d): ", NUM_SHOWTIMES);
+    int sIndex = getValidatedInt(1, NUM_SHOWTIMES) - 1;
+
+    Showtime *show = &movies[mIndex].showtimes[sIndex];
+
+    printf("\n=========================================\n");
+    printf("            ---- SEAT MAP ----           \n");
+    printf("=========================================\n");
+    printf(" Movie: %s | Time: %s\n", movies[mIndex].title, show->time);
+    printf(" Legend: [.] Free | [X] Booked\n");
+    printf(" Tiers: Rows A-B (Regular), Rows C-D (Premium), Row E (VIP)\n");
+    printf("-----------------------------------------\n");
+    printf("    ");
+    for (int c = 0; c < COLS; c++) printf("%2d ", c + 1);
+    printf("\n");
+
+    for (int r = 0; r < ROWS; r++) {
+        char rowLetter = 'A' + r;
+        printf(" %c  ", rowLetter);
+        for (int c = 0; c < COLS; c++) {
+            if (show->seats[r][c].isBooked) {
+                printf(" X ");
+            } else {
+                printf(" . ");
+            }
+        }
+        if (r < 2) printf(" (Regular - Rs. 500)");
+        else if (r < 4) printf(" (Premium - Rs. 750)");
+        else printf(" (VIP - Rs. 1000)");
+        printf("\n");
+    }
+    printf("=========================================\n");
+}
+

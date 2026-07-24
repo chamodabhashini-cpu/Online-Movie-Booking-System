@@ -6,7 +6,7 @@
 #include "management.h"
 #include "reports.h"
 
-// Global Data Setup Definition
+
 Movie movies[NUM_MOVIES];
 
 int main(void) {
