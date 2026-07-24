@@ -31,9 +31,25 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="display.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="display.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="management.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="management.h" />
+		<Unit filename="reports.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="reports.h" />
+		<Unit filename="reservation.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="reservation.h" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>
